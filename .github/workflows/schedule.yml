@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: "0 0 * * *"
   # Manual triggers with workflow_dispatch
-  # workflow_dispatch:
+  workflow_dispatch:
 jobs:
   update-gist:
     runs-on: ubuntu-latest
@@ -13,5 +13,5 @@ jobs:
         uses: yoonucho/waka-box@master
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: 807bc574759e63b94c0069e7605ac43a
+          GIST_ID: ${{ secrets.GIST_ID }}
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
